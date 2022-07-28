@@ -350,7 +350,7 @@ Un grupo de telegram obtiene su @grupo al hacerse público.</p>
 Otros casos involucran malicia, como por ejemplo puede haber un vendedor que quiera quedarse con el dinero fiat y que le retornen los sats. Para estos casos el solver puede ejecutar el comando <code>/settleorder</code>, lo que hace este comando es que reconoce el pago recibido y automáticamente envía los sats al comprador.</p>
 <p><img src="./assets/images/settleorder.png" alt="Completando una orden" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cancelando-una-orden"><a class="header" href="#cancelando-una-orden">Cancelando una orden</a></h1>
-<p>La otra alternativa que tiene el solver es cancelar la orden, si el caso lo amerita. Para ello usa el comando <code>/cancelorder</code>.</p>
+<p>La otra alternativa que tiene el solver es cancelar la orden, si el caso lo amerita. Para ello usa el comando <code>/cancelorder</code>. Este comando le retorna los sats al vendedor.</p>
 <p><img src="./assets/images/cancelorder.png" alt="Cancel order capture" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="eliminando-disputas"><a class="header" href="#eliminando-disputas">Eliminando disputas</a></h1>
 <p>Cada vez que un usuario inicia una disputa tanto él como su contraparte quedan envueltos en la misma. Hasta que no se resuelva ambos quedan relacionados, al resolverse, el solver tiene la potestad de eliminarle esta disputa a uno de los usuarios o a los dos, si lo necesita, con el comando 
