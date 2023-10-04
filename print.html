@@ -9,7 +9,6 @@
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
@@ -34,14 +33,15 @@
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -57,7 +57,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -69,12 +69,14 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -82,16 +84,38 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">@lnp2pBot</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">1.</strong> FAQ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="what-is-lnp2pbot.html"><strong aria-hidden="true">1.1.</strong> ¿Qué es lnp2pBot?</a></li><li class="chapter-item expanded "><a href="what-is-lightning-network.html"><strong aria-hidden="true">1.2.</strong> ¿Qué es Lightning Network?</a></li><li class="chapter-item expanded "><a href="what-do-i-need-to-use-lnp2pbot.html"><strong aria-hidden="true">1.3.</strong> ¿Qué necesito para usar @lnp2pBot?</a></li><li class="chapter-item expanded "><a href="how-do-i-initialize-the-bot.html"><strong aria-hidden="true">1.4.</strong> ¿Cómo inicializo el bot?</a></li><li class="chapter-item expanded "><a href="what-are-the-channels-to-make-exchanges-on-telegram.html"><strong aria-hidden="true">1.5.</strong> ¿Cuáles son los canales para realizar intercambios en telegram?</a></li><li class="chapter-item expanded "><a href="where-i-can-find-offers-for-my-local-currency.html"><strong aria-hidden="true">1.6.</strong> ¿Dónde puedo encontrar ofertas en mi moneda local?</a></li><li class="chapter-item expanded "><a href="do-i-need-to-fill-out-any-user-registration-or-identity-verification.html"><strong aria-hidden="true">1.7.</strong> ¿Necesito llenar algún registro de usuario o verificación de identidad?</a></li><li class="chapter-item expanded "><a href="what-type-of-information-do-you-collect-from-each-user.html"><strong aria-hidden="true">1.8.</strong> ¿Qué tipo de información recopilan de cada usuario?</a></li><li class="chapter-item expanded "><a href="how-does-the-user-reputation-system-work.html"><strong aria-hidden="true">1.9.</strong> ¿Cómo funciona el sistema de reputación de usuario?</a></li><li class="chapter-item expanded "><a href="how-do-i-create-a-sell-order.html"><strong aria-hidden="true">1.10.</strong> ¿Cómo creo una orden de venta?</a></li><li class="chapter-item expanded "><a href="how-do-i-create-a-buy-order.html"><strong aria-hidden="true">1.11.</strong> ¿Cómo creo una orden de compra?</a></li><li class="chapter-item expanded "><a href="how-do-i-find-and-accept-an-offer-to-buy-or-sell.html"><strong aria-hidden="true">1.12.</strong> ¿Cómo busco y acepto una oferta de compra o venta?</a></li><li class="chapter-item expanded "><a href="how-do-i-cancel-a-posted-order.html"><strong aria-hidden="true">1.13.</strong> ¿Cómo cancelo una orden publicada?</a></li><li class="chapter-item expanded "><a href="is-there-a-limit-on-the-amounts-i-can-trade.html"><strong aria-hidden="true">1.14.</strong> ¿Hay límites mínimos o máximos en las cantidades que puedo transar?</a></li><li class="chapter-item expanded "><a href="how-long-does-it-take-to-finalize-a-transaction.html"><strong aria-hidden="true">1.15.</strong> ¿Cuánto tiempo toma concretar una transacción?</a></li><li class="chapter-item expanded "><a href="fees-and-commissions.html"><strong aria-hidden="true">1.16.</strong> ¿Qué tarifas y comisiones debo pagar?</a></li><li class="chapter-item expanded "><a href="what-exchange-rate-does-the-bot-use.html"><strong aria-hidden="true">1.17.</strong> ¿Qué tasa de cambio utiliza el bot?</a></li><li class="chapter-item expanded "><a href="in-which-countries-is-it-available.html"><strong aria-hidden="true">1.18.</strong> ¿En qué países está disponible?</a></li><li class="chapter-item expanded "><a href="community-find.html"><strong aria-hidden="true">1.19.</strong> ¿Cómo puedo encontrar comunidades que operen con mi moneda?</a></li><li class="chapter-item expanded "><a href="How-do-i-buy-in-a-community.html"><strong aria-hidden="true">1.20.</strong> ¿Cómo compro en una determinada comunidad?</a></li><li class="chapter-item expanded "><a href="recommended-wallets.html"><strong aria-hidden="true">1.21.</strong> Wallets recomendadas</a></li><li class="chapter-item expanded "><a href="common-problems-and-solutions.html"><strong aria-hidden="true">1.22.</strong> Problemas comunes y soluciones</a></li><li class="chapter-item expanded "><a href="how-do-i-know-if-seller-released.html"><strong aria-hidden="true">1.23.</strong> ¿Cómo sé si el vendedor realmente liberó los sats?</a></li><li class="chapter-item expanded "><a href="i-cant-receive.html"><strong aria-hidden="true">1.24.</strong> No he podido recibir los sats por mi compra</a></li><li class="chapter-item expanded "><a href="support.html"><strong aria-hidden="true">1.25.</strong> Soporte</a></li><li class="chapter-item expanded "><a href="contact-with-developers.html"><strong aria-hidden="true">1.26.</strong> Contacto con desarrolladores</a></li><li class="chapter-item expanded "><a href="i-am-a-developer-and-i-want-to-contribute.html"><strong aria-hidden="true">1.27.</strong> Soy desarrollador y quiero contribuir</a></li></ol></li><li class="chapter-item expanded "><a href="communities.html"><strong aria-hidden="true">2.</strong> Comunidades</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="trust.html"><strong aria-hidden="true">2.1.</strong> Confianza</a></li><li class="chapter-item expanded "><a href="benevolent-dictator.html"><strong aria-hidden="true">2.2.</strong> Dictador Benevolente</a></li><li class="chapter-item expanded "><a href="how-do-i-create-a-community.html"><strong aria-hidden="true">2.3.</strong> ¿Cómo creo una comunidad?</a></li><li class="chapter-item expanded "><a href="communities-first-steps.html"><strong aria-hidden="true">2.4.</strong> Manos a la obra. Comunidades, primeros pasos</a></li><li class="chapter-item expanded "><a href="modifying-a-community.html"><strong aria-hidden="true">2.5.</strong> Modificando una comunidad</a></li><li class="chapter-item expanded "><a href="creating-orders.html"><strong aria-hidden="true">2.6.</strong> Creando órdenes</a></li><li class="chapter-item expanded "><a href="incentives.html"><strong aria-hidden="true">2.7.</strong> Incentivos</a></li><li class="chapter-item expanded "><a href="managing-a-community.html"><strong aria-hidden="true">2.8.</strong> Administrando una comunidad</a></li><li class="chapter-item expanded "><a href="what-is-a-solver.html"><strong aria-hidden="true">2.9.</strong> ¿Qué es un Solver</a></li><li class="chapter-item expanded "><a href="resolving-disputes.html"><strong aria-hidden="true">2.10.</strong> Resolviendo disputas</a></li><li class="chapter-item expanded "><a href="settle-order.html"><strong aria-hidden="true">2.11.</strong> Completando una orden</a></li><li class="chapter-item expanded "><a href="cancel-order.html"><strong aria-hidden="true">2.12.</strong> Cancelando una orden</a></li><li class="chapter-item expanded "><a href="removing-disputes.html"><strong aria-hidden="true">2.13.</strong> Eliminando disputas</a></li><li class="chapter-item expanded "><a href="ban-user-community.html"><strong aria-hidden="true">2.14.</strong> Expulsar a un usuario de la comunidad</a></li></ol></li><li class="chapter-item expanded "><a href="safe-trades-on-lnp2pbot.html"><strong aria-hidden="true">3.</strong> Intercambios seguros en @lnp2pbot</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="scam-attempts.html"><strong aria-hidden="true">3.1.</strong> Intentos de estafas</a></li><li class="chapter-item expanded "><a href="tips-to-avoid-scams.html"><strong aria-hidden="true">3.2.</strong> Consejos para evitar estafas</a></li><li class="chapter-item expanded "><a href="account-triangulation-scams.html"><strong aria-hidden="true">3.3.</strong> Estafas por triangulación de cuentas o estafas puente</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="prevention-of-account-triangulation-scams.html"><strong aria-hidden="true">3.3.1.</strong> Prevención de estafas puente</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">@lnp2pBot</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">1.</strong> FAQ</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="what-is-lnp2pbot.html"><strong aria-hidden="true">1.1.</strong> ¿Qué es lnp2pBot?</a></li><li class="chapter-item expanded "><a href="what-is-lightning-network.html"><strong aria-hidden="true">1.2.</strong> ¿Qué es Lightning Network?</a></li><li class="chapter-item expanded "><a href="what-do-i-need-to-use-lnp2pbot.html"><strong aria-hidden="true">1.3.</strong> ¿Qué necesito para usar @lnp2pBot?</a></li><li class="chapter-item expanded "><a href="how-do-i-initialize-the-bot.html"><strong aria-hidden="true">1.4.</strong> ¿Cómo inicializo el bot?</a></li><li class="chapter-item expanded "><a href="what-are-the-channels-to-make-exchanges-on-telegram.html"><strong aria-hidden="true">1.5.</strong> ¿Cuáles son los canales para realizar intercambios en telegram?</a></li><li class="chapter-item expanded "><a href="where-i-can-find-offers-for-my-local-currency.html"><strong aria-hidden="true">1.6.</strong> ¿Dónde puedo encontrar ofertas en mi moneda local?</a></li><li class="chapter-item expanded "><a href="do-i-need-to-fill-out-any-user-registration-or-identity-verification.html"><strong aria-hidden="true">1.7.</strong> ¿Necesito llenar algún registro de usuario o verificación de identidad?</a></li><li class="chapter-item expanded "><a href="what-type-of-information-do-you-collect-from-each-user.html"><strong aria-hidden="true">1.8.</strong> ¿Qué tipo de información recopilan de cada usuario?</a></li><li class="chapter-item expanded "><a href="how-does-the-user-reputation-system-work.html"><strong aria-hidden="true">1.9.</strong> ¿Cómo funciona el sistema de reputación de usuario?</a></li><li class="chapter-item expanded "><a href="how-do-i-create-a-sell-order.html"><strong aria-hidden="true">1.10.</strong> ¿Cómo creo una orden de venta?</a></li><li class="chapter-item expanded "><a href="how-do-i-create-a-buy-order.html"><strong aria-hidden="true">1.11.</strong> ¿Cómo creo una orden de compra?</a></li><li class="chapter-item expanded "><a href="how-do-i-find-and-accept-an-offer-to-buy-or-sell.html"><strong aria-hidden="true">1.12.</strong> ¿Cómo busco y acepto una oferta de compra o venta?</a></li><li class="chapter-item expanded "><a href="how-do-i-cancel-a-posted-order.html"><strong aria-hidden="true">1.13.</strong> ¿Cómo cancelo una orden publicada?</a></li><li class="chapter-item expanded "><a href="is-there-a-limit-on-the-amounts-i-can-trade.html"><strong aria-hidden="true">1.14.</strong> ¿Hay límites mínimos o máximos en las cantidades que puedo transar?</a></li><li class="chapter-item expanded "><a href="how-long-does-it-take-to-finalize-a-transaction.html"><strong aria-hidden="true">1.15.</strong> ¿Cuánto tiempo toma concretar una transacción?</a></li><li class="chapter-item expanded "><a href="fees-and-commissions.html"><strong aria-hidden="true">1.16.</strong> ¿Qué tarifas y comisiones debo pagar?</a></li><li class="chapter-item expanded "><a href="what-exchange-rate-does-the-bot-use.html"><strong aria-hidden="true">1.17.</strong> ¿Qué tasa de cambio utiliza el bot?</a></li><li class="chapter-item expanded "><a href="in-which-countries-is-it-available.html"><strong aria-hidden="true">1.18.</strong> ¿En qué países está disponible?</a></li><li class="chapter-item expanded "><a href="community-find.html"><strong aria-hidden="true">1.19.</strong> ¿Cómo puedo encontrar comunidades que operen con mi moneda?</a></li><li class="chapter-item expanded "><a href="how-do-i-make-offers-in-a-community.html"><strong aria-hidden="true">1.20.</strong> ¿Cómo publico ofertas en una comunidad?</a></li><li class="chapter-item expanded "><a href="recommended-wallets.html"><strong aria-hidden="true">1.21.</strong> Wallets recomendadas</a></li><li class="chapter-item expanded "><a href="common-problems-and-solutions.html"><strong aria-hidden="true">1.22.</strong> Problemas comunes y soluciones</a></li><li class="chapter-item expanded "><a href="how-do-i-know-if-seller-released.html"><strong aria-hidden="true">1.23.</strong> ¿Cómo sé si el vendedor realmente liberó los sats?</a></li><li class="chapter-item expanded "><a href="i-cant-receive.html"><strong aria-hidden="true">1.24.</strong> No he podido recibir los sats por mi compra</a></li><li class="chapter-item expanded "><a href="support.html"><strong aria-hidden="true">1.25.</strong> Soporte</a></li><li class="chapter-item expanded "><a href="contact-with-developers.html"><strong aria-hidden="true">1.26.</strong> Contacto con desarrolladores</a></li><li class="chapter-item expanded "><a href="i-am-a-developer-and-i-want-to-contribute.html"><strong aria-hidden="true">1.27.</strong> Soy desarrollador y quiero contribuir</a></li></ol></li><li class="chapter-item expanded "><a href="communities.html"><strong aria-hidden="true">2.</strong> Comunidades</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="trust.html"><strong aria-hidden="true">2.1.</strong> Confianza</a></li><li class="chapter-item expanded "><a href="benevolent-dictator.html"><strong aria-hidden="true">2.2.</strong> Dictador Benevolente</a></li><li class="chapter-item expanded "><a href="how-do-i-create-a-community.html"><strong aria-hidden="true">2.3.</strong> ¿Cómo creo una comunidad?</a></li><li class="chapter-item expanded "><a href="communities-first-steps.html"><strong aria-hidden="true">2.4.</strong> Manos a la obra. Comunidades, primeros pasos</a></li><li class="chapter-item expanded "><a href="modifying-a-community.html"><strong aria-hidden="true">2.5.</strong> Modificando una comunidad</a></li><li class="chapter-item expanded "><a href="creating-orders.html"><strong aria-hidden="true">2.6.</strong> Creando órdenes</a></li><li class="chapter-item expanded "><a href="incentives.html"><strong aria-hidden="true">2.7.</strong> Incentivos</a></li><li class="chapter-item expanded "><a href="managing-a-community.html"><strong aria-hidden="true">2.8.</strong> Administrando una comunidad</a></li><li class="chapter-item expanded "><a href="what-is-a-solver.html"><strong aria-hidden="true">2.9.</strong> ¿Qué es un Solver</a></li><li class="chapter-item expanded "><a href="resolving-disputes.html"><strong aria-hidden="true">2.10.</strong> Resolviendo disputas</a></li><li class="chapter-item expanded "><a href="settle-order.html"><strong aria-hidden="true">2.11.</strong> Completando una orden</a></li><li class="chapter-item expanded "><a href="cancel-order.html"><strong aria-hidden="true">2.12.</strong> Cancelando una orden</a></li><li class="chapter-item expanded "><a href="removing-disputes.html"><strong aria-hidden="true">2.13.</strong> Eliminando disputas</a></li><li class="chapter-item expanded "><a href="ban-user-community.html"><strong aria-hidden="true">2.14.</strong> Expulsar a un usuario de la comunidad</a></li></ol></li><li class="chapter-item expanded "><a href="safe-trades-on-lnp2pbot.html"><strong aria-hidden="true">3.</strong> Intercambios seguros en @lnp2pbot</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="scam-attempts.html"><strong aria-hidden="true">3.1.</strong> Intentos de estafas</a></li><li class="chapter-item expanded "><a href="tips-to-avoid-scams.html"><strong aria-hidden="true">3.2.</strong> Consejos para evitar estafas</a></li><li class="chapter-item expanded "><a href="account-triangulation-scams.html"><strong aria-hidden="true">3.3.</strong> Estafas por triangulación de cuentas o estafas puente</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="prevention-of-account-triangulation-scams.html"><strong aria-hidden="true">3.3.1.</strong> Prevención de estafas puente</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
@@ -100,7 +124,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -133,7 +157,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -144,7 +168,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="lnp2pbot"><a class="header" href="#lnp2pbot">@lnp2pBot</a></h1>
-<p>En este sitio encontrarás información sobre <a href="https://t.me/lnp2pbot">@lnp2pBot</a>. Esta es una aplicación para comprar y vender bitcoin en Lightning Network, con tu moneda local y sin entregar datos personales. </p>
+<p>En este sitio encontrarás información sobre <a href="https://t.me/lnp2pbot">@lnp2pBot</a>. Este es un bot de Telegram para comprar y vender bitcoin en Lightning Network, de forma p2p, con tu moneda local y sin hacer KYC o entregar datos personales.</p>
 <h2 id="guía-de-inicio-rápido"><a class="header" href="#guía-de-inicio-rápido">Guía de inicio rápido</a></h2>
 <ol>
 <li>
@@ -158,8 +182,28 @@
 <p><img src="./assets/images/bot-start.gif" alt="Iniciando el bot" /></p>
 </li>
 <li>
-<p>Encuentra ofertas en el canal <a href="https://t.me/p2plightning">@lnp2pbot Exchange</a>.</p>
+<p>Encuentra ofertas de compra o venta de Sats en:</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><a href="https://market.lnp2pbot.com">https://market.lnp2pbot.com</a></p>
+</li>
+<li>
+<p>El canal general de ofertas: <a href="https://t.me/p2plightning">@lnp2pbot Exchange</a></p>
+</li>
+<li>
+<p><a href="./where-i-can-find-offers-for-my-local-currency.html">Una comunidad donde utilicen tu moneda fíat</a></p>
 <p><img src="./assets/images/scan-channel.gif" alt="Buscando ofertas" /></p>
+</li>
+</ul>
+<ol start="5">
+<li>
+<p>Cuando tomes una oferta <a href="https://t.me/lnp2pbot">@lnp2pBot</a> te guiará paso a paso en el proceso de compra/venta.</p>
+</li>
+<li>
+<p>Si no encuentras una oferta que te convenga, crea una tú y espera a que alguien la tome.
+Escribe en <a href="https://t.me/lnp2pbot">@lnp2pBot</a> <code>/buy</code> para <a href="./how-do-i-create-a-buy-order.html">comprar Sats</a>, o <code>/sell</code> para <a href="./how-do-i-create-a-sell-order.html">vender Sats</a>, de acuerdo a lo que quieras hacer y este te guiará en el proceso. Si quieres que tu oferta se publique en una comunidad en específico, y no en el canal general de ofertas, debes <a href="./How-do-i-buy-in-a-community.html">configurar una comunidad por defecto</a>.</p>
 </li>
 <li>
 <p>Comienza a comprar y vender. </p>
@@ -168,6 +212,18 @@
 <p>Encuentra respuestas a tus dudas en la sección <a href="./faq.html">FAQ</a>.</p>
 </li>
 </ol>
+<h2 id="recomendaciones"><a class="header" href="#recomendaciones">Recomendaciones</a></h2>
+<ul>
+<li>
+<p>Si tienes alguna duda que no esté respondida en <a href="https://lnp2pbot.com/aprende/">https://lnp2pbot/aprende</a> únete al <a href="https://t.me/lnp2pbotHelp">grupo de soporte</a> y pregunta allí.</p>
+</li>
+<li>
+<p>Reporta errores o sugiere mejoras en nuestros <a href="https://github.com/lnp2pbot">repositorios de GitHub</a>.</p>
+</li>
+<li>
+<p>Síguenos en <a href="https://x.com/lnp2pBot">X</a> para que no te pierdas los anuncios principales.</p>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="faq"><a class="header" href="#faq">FAQ</a></h1>
 <p>Aquí respondemos las preguntas frecuentes hechas por nuestros usuarios.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="qué-es-lnp2pbot"><a class="header" href="#qué-es-lnp2pbot">¿Qué es @lnp2pBot?</a></h1>
@@ -197,7 +253,11 @@
 <p>Cada comando se envía como un mensaje directo al bot.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cómo-funciona-el-sistema-de-reputación-de-usuario"><a class="header" href="#cómo-funciona-el-sistema-de-reputación-de-usuario">¿Cómo funciona el sistema de reputación de usuario?</a></h1>
 <p>Por cada transacción que realices se te pedirá calificar a tu contraparte, a la vez que esta te calificará a ti. Para ello, <a href="https://t.me/lnp2pBot"><strong>lnp2pBot</strong></a> cuenta con un sistema de puntuación de 5 estrellas que te permitirá valorar tu experiencia, donde 1 estrella es la menor calificación y 5 estrellas es la mayor. </p>
-<p>Cuando crees una oferta, esta incluirá por defecto el número de operaciones exitosas que realizaste y las calificaciones recibidas de tus contrapartes.</p>
+<p>Para obtener la reputación el bot realiza un cálculo iterativo de la media y la desviación estándar de las calificaciones y las operaciones exitosas, por lo que en las primeras operaciones, aunque te hayan calificado con el máximo, tu reputación no será alta sino que aumentará progresivamente a medida que vayas haciendo operaciones con buenas calificaciones. </p>
+<p>Dicho cálculo lo puedes ver en: <a href="https://github.com/lnp2pBot/bot/blob/main/bot/commands.js#L279">https://github.com/lnp2pBot/bot/blob/main/bot/commands.js#L279</a></p>
+<p>Y está basado en:
+<a href="https://math.stackexchange.com/questions/2148877/iterative-calculation-of-mean-and-standard-deviation">https://math.stackexchange.com/questions/2148877/iterative-calculation-of-mean-and-standard-deviation</a></p>
+<p>Cuando crees una oferta, esta incluirá por defecto el número de operaciones exitosas que realizaste, las calificaciones recibidas de tus contrapartes, y el número de operaciones realizadas. Recomendamos tener en cuenta todos estos aspectos al tomar una oferta para evitar estafas.</p>
 <p><img src="./assets/images/reputation-system.jpg" alt="Reputation System" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cómo-creo-una-orden-de-venta"><a class="header" href="#cómo-creo-una-orden-de-venta">¿Cómo creo una orden de venta?</a></h1>
 <p>Al chatear con <a href="https://t.me/lnp2pbot">@lnp2pBot</a> encontrarás un botón de &quot;Menú&quot;. Púlsalo para desplegar la lista de comandos que puedes usar. Selecciona el comando de venta: <code>/sell</code>, para activar el asistente (<em>wizard</em>) que te guiará por el proceso de vender.</p>
@@ -282,46 +342,69 @@
 <p>Al crear una orden puedes optar por especificar solo el monto fíat a <code>pagar/cobrar</code>, y no la cantidad de sats que deseas <code>comprar/vender</code>. En este caso, debes seleccionar el botón &quot;Precio de mercado&quot;, y el bot hará el cálculo a tasa de mercado ofrecida por <a href="https://yadio.io/">yadio.io</a>.</p>
 <p><img src="./assets/images/market-price.gif" alt="Precio de mercado" /></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="en-qué-países-e-idiomas-está-disponible"><a class="header" href="#en-qué-países-e-idiomas-está-disponible">¿En qué países e idiomas está disponible?</a></h1>
-<p>Al ser un intercambio P2P sobre Telegram, técnicamente está disponible para cualquier persona que tenga esta app. Sin embargo, hasta el momento el bot interactúa con un listado de 58 monedas fíat con las que puedes crear órdenes de <code>compra/venta</code> usando el botón <code>Precio de mercado</code> del asistente.</p>
-<p>Acá te dejamos el listado:</p>
-<table><thead><tr><th>Code</th><th>Name</th><th></th></tr></thead><tbody>
+<p>Al ser un intercambio P2P sobre Telegram, técnicamente está disponible para cualquier persona que tenga esta app. Sin embargo, hasta el momento el bot interactúa con un listado de 94 monedas fíat con las que puedes crear órdenes de <code>compra/venta</code> usando el botón <code>Precio de mercado</code> del asistente.</p>
+<p>Acá te dejamos el listado. Para verlo dentro de <a href="https://t.me/lnp2pbot">@lnp2pBot</a> debes escribir <code>/listcurrencies</code></p>
+<div class="table-wrapper"><table><thead><tr><th>Code</th><th>Name</th><th></th></tr></thead><tbody>
 <tr><td>AED</td><td>United Arab Emirates Dirham</td><td>🇦🇪</td></tr>
+<tr><td>ANG</td><td>Netherlands Antillean Guilder</td><td>🇧🇶</td></tr>
+<tr><td>AOA</td><td>Angolan Kwanza</td><td>🇦🇴</td></tr>
 <tr><td>ARS</td><td>Peso argentino</td><td>🇦🇷</td></tr>
 <tr><td>AUD</td><td>Australian Dollar</td><td>🇦🇺</td></tr>
 <tr><td>AZN</td><td>Azerbaijani Manat</td><td>🇦🇿</td></tr>
+<tr><td>BDT</td><td>Bangladeshi Taka</td><td>🇧🇩</td></tr>
+<tr><td>BHD</td><td>Bahraini Dinar</td><td>🇧🇭</td></tr>
+<tr><td>BIF</td><td>Burundian Franc</td><td>🇧🇮</td></tr>
+<tr><td>BMD</td><td>Bermudan Dollar</td><td>🇧🇲</td></tr>
 <tr><td>BOB</td><td>Boliviano</td><td>🇧🇴</td></tr>
 <tr><td>BRL</td><td>Brazilian Real</td><td>🇧🇷</td></tr>
+<tr><td>BWP</td><td>Botswanan Pula</td><td>🇧🇼</td></tr>
 <tr><td>BYN</td><td>Belarusian Ruble</td><td>🇧🇾</td></tr>
-<tr><td>CHF</td><td>Swiss Franc</td><td>🇨🇭</td></tr>
 <tr><td>CAD</td><td>Canadian Dollar</td><td>🇨🇦</td></tr>
+<tr><td>CDF</td><td>Congolese Franc</td><td>🇨🇩</td></tr>
+<tr><td>CHF</td><td>Swiss Franc</td><td>🇨🇭</td></tr>
 <tr><td>CLP</td><td>Peso chileno</td><td>🇨🇱</td></tr>
 <tr><td>CNY</td><td>Chinese Yuan</td><td>🇨🇳</td></tr>
 <tr><td>COP</td><td>Peso colombiano</td><td>🇨🇴</td></tr>
 <tr><td>CRC</td><td>Colón</td><td>🇨🇷</td></tr>
 <tr><td>CUP</td><td>Peso cubano</td><td>🇨🇺</td></tr>
 <tr><td>CZK</td><td>Czech Republic Koruna</td><td>🇨🇿</td></tr>
+<tr><td>DJF</td><td>Djiboutian Franc</td><td>🇩🇯</td></tr>
 <tr><td>DKK</td><td>Danish Krone</td><td>🇩🇰</td></tr>
 <tr><td>DOP</td><td>Peso dominicano</td><td>🇩🇴</td></tr>
+<tr><td>DZD</td><td>Algerian Dinar</td><td>🇩🇿</td></tr>
+<tr><td>EGP</td><td>Egyptian Pound</td><td>🇪🇬</td></tr>
+<tr><td>ETB</td><td>Ethiopian Birr</td><td>🇪🇹</td></tr>
 <tr><td>EUR</td><td>Euro</td><td>🇪🇺</td></tr>
 <tr><td>GBP</td><td>British Pound Sterling</td><td>🇬🇧</td></tr>
 <tr><td>GEL</td><td>Georgian Lari</td><td>🇬🇪</td></tr>
 <tr><td>GHS</td><td>Ghanaian Cedi</td><td>🇬🇭</td></tr>
+<tr><td>GNF</td><td>Guinean Franc</td><td>🇬🇳</td></tr>
 <tr><td>GTQ</td><td>Quetzal</td><td>🇬🇹</td></tr>
 <tr><td>HKD</td><td>Hong Kong Dollar</td><td>🇭🇰</td></tr>
+<tr><td>HNL</td><td>Lempira</td><td>🇭🇳</td></tr>
 <tr><td>HUF</td><td>Hungarian Forint</td><td>🇭🇺</td></tr>
 <tr><td>IDR</td><td>Indonesian Rupiah</td><td>🇮🇩</td></tr>
 <tr><td>ILS</td><td>Israeli New Sheqel</td><td>🇮🇱</td></tr>
 <tr><td>INR</td><td>Indian Rupee</td><td>🇮🇳</td></tr>
 <tr><td>JMD</td><td>Jamaican Dollar</td><td>🇯🇲</td></tr>
+<tr><td>JOD</td><td>Jordanian Dinar</td><td>🇯🇴</td></tr>
 <tr><td>JPY</td><td>Japanese Yen</td><td>🇯🇵</td></tr>
 <tr><td>KES</td><td>Kenyan Shilling</td><td>🇰🇪</td></tr>
+<tr><td>KGS</td><td>Kyrgystani Som</td><td>🇰🇬</td></tr>
 <tr><td>KRW</td><td>South Korean Won</td><td>🇰🇷</td></tr>
 <tr><td>KZT</td><td>Kazakhstani Tenge</td><td>🇰🇿</td></tr>
+<tr><td>LBP</td><td>Lebanese Pound</td><td>🇱🇧</td></tr>
+<tr><td>LKR</td><td>Sri Lankan Rupee</td><td>🇱🇰</td></tr>
+<tr><td>MAD</td><td>Moroccan Dirham</td><td>🇲🇦</td></tr>
+<tr><td>MGA</td><td>Malagasy Ariary</td><td>🇲🇬</td></tr>
+<tr><td>MLC</td><td>Moneda Libremente Convertible</td><td>🇨🇺</td></tr>
 <tr><td>MXN</td><td>Peso mexicano</td><td>🇲🇽</td></tr>
 <tr><td>MYR</td><td>Malaysian Ringgit</td><td>🇲🇾</td></tr>
 <tr><td>NAD</td><td>Namibian Dollar</td><td>🇳🇦</td></tr>
 <tr><td>NGN</td><td>Nigerian Naira</td><td>🇳🇬</td></tr>
+<tr><td>NIO</td><td>Nicaraguan Córdoba</td><td>🇳🇮</td></tr>
 <tr><td>NOK</td><td>Norwegian Krone</td><td>🇳🇴</td></tr>
+<tr><td>NPR</td><td>Nepalese Rupee</td><td>🇳🇵</td></tr>
 <tr><td>NZD</td><td>New Zealand Dollar</td><td>🇳🇿</td></tr>
 <tr><td>PAB</td><td>Panamanian Balboa</td><td>🇵🇦</td></tr>
 <tr><td>PEN</td><td>Peruvian Nuevo Sol</td><td>🇵🇪</td></tr>
@@ -331,34 +414,79 @@
 <tr><td>PYG</td><td>Paraguayan Guarani</td><td>🇵🇾</td></tr>
 <tr><td>QAR</td><td>Qatari Rial</td><td>🇶🇦</td></tr>
 <tr><td>RON</td><td>Romanian Leu</td><td>🇷🇴</td></tr>
+<tr><td>RSD</td><td>Serbian Dinar</td><td>🇷🇸</td></tr>
 <tr><td>RUB</td><td>Russian Ruble</td><td>🇷🇺</td></tr>
+<tr><td>RWF</td><td>Rwandan Franc</td><td>🇷🇼</td></tr>
 <tr><td>SAR</td><td>Saudi Riyal</td><td>🇸🇦</td></tr>
 <tr><td>SEK</td><td>Swedish Krona</td><td>🇸🇪</td></tr>
 <tr><td>SGD</td><td>Singapore Dollar</td><td>🇸🇬</td></tr>
+<tr><td>THB</td><td>Thai Baht</td><td>🇹🇭</td></tr>
+<tr><td>TND</td><td>Tunisian Dinar</td><td>🇹🇳</td></tr>
 <tr><td>TRY</td><td>Turkish Lira</td><td>🇹🇷</td></tr>
 <tr><td>TTD</td><td>Trinidad and Tobago Dollar</td><td>🇹🇹</td></tr>
+<tr><td>TWD</td><td>New Taiwan Dollar</td><td>🇹🇼</td></tr>
+<tr><td>TZS</td><td>Tanzanian Shilling</td><td>🇹🇿</td></tr>
 <tr><td>UAH</td><td>Ukrainian Hryvnia</td><td>🇺🇦</td></tr>
+<tr><td>UGX</td><td>Ugandan Shilling</td><td>🇺🇬</td></tr>
 <tr><td>USD</td><td>US Dollar</td><td>🇺🇸</td></tr>
+<tr><td>USDSV</td><td>USD en El Salvador</td><td>🇺🇸🇸🇻</td></tr>
+<tr><td>USDVE</td><td>USD en Bs</td><td>🇺🇸🇻🇪</td></tr>
+<tr><td>USDUY</td><td>USD en Uruguay</td><td>🇺🇸🇺🇾</td></tr>
 <tr><td>UYU</td><td>Peso uruguayo</td><td>🇺🇾</td></tr>
+<tr><td>UZS</td><td>Uzbekistan Som</td><td>🇺🇿</td></tr>
 <tr><td>VES</td><td>Bolívar</td><td>🇻🇪</td></tr>
 <tr><td>VND</td><td>Vietnamese Dong</td><td>🇻🇳</td></tr>
+<tr><td>XAF</td><td>CFA Franc BEAC</td><td>🏳️</td></tr>
+<tr><td>XOF</td><td>CFA Franc BCEAO</td><td>🏳️</td></tr>
 <tr><td>ZAR</td><td>South African Rand</td><td>🇿🇦</td></tr>
 </tbody></table>
-<p>Por ahora, <a href="https://t.me/lnp2pbot"><strong>@lnp2pBot</strong></a> está totalmente disponible en inglés y español. Hay una traducción parcial (y en proceso) al portugués.</p>
+</div>
+<p>Por ahora, <a href="https://t.me/lnp2pbot"><strong>@lnp2pBot</strong></a> está totalmente disponible en inglés, español, portugués, francés, italiano, alemán, ruso y ucraniano.</p>
 <p>Para cambiar el idioma del asistente usa el comando  <code>/setlang</code></p>
 <p>Si quieres ayudar traduciendo <strong>lnp2pBot</strong> a tu idioma puedes proponer tu colaboración. <a href="https://github.com/lnp2pBot/bot/blob/10af43b1199a163f8d8ec79e66546f4ad514ff46/CONTRIBUTING.md">Este es un buen lugar para empezar.</a> </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cómo-puedo-encontrar-comunidades-que-operen-con-mi-moneda"><a class="header" href="#cómo-puedo-encontrar-comunidades-que-operen-con-mi-moneda">¿Cómo puedo encontrar comunidades que operen con mi moneda?</a></h1>
 <p>Al ejecutar el comando: <code>/findcomms</code> seguido del código de la moneda deseada (puedes usar código estándar de divisas ISO 4217), <strong>lnp2pBot</strong> te mostrará las comunidades creadas que operan con tu moneda. También puede haber comunidades que operan sats contra alguna otra criptomoneda. No hay ningún tipo de limitación para el usuario.</p>
 <p>En la siguiente imagen podemos ver el resultado de <code>/findcomms usd</code></p>
 <p><img src="./assets/images/findcomms.jpg" alt="Find Community Capture" /></p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="cómo-compro-en-una-determinada-comunidad"><a class="header" href="#cómo-compro-en-una-determinada-comunidad">¿Cómo compro en una determinada comunidad?</a></h1>
-<p>Una vez que hemos ejecutado el comando <code>/findcomms *&lt;fiat code&gt;*</code> para encontrar todas las comunidades que operan en la moneda deseada</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="cómo-publico-ofertas-en-una-comunidad"><a class="header" href="#cómo-publico-ofertas-en-una-comunidad">¿Cómo publico ofertas en una comunidad?</a></h1>
+<p>Cuando comienzas a usar <a href="https://t.me/lnp2pbot">@lnp2pBot</a> las órdenes que creas son publicadas por defecto en <a href="https://t.me/p2plightning">https://t.me/p2plightning</a> que es el canal general donde puedes encontrar ofertas en varias monedas fíat.</p>
+<p>Si quieres publicar ofertas en un canal que sea específico para tu moneda, debes hacerlo a través de alguna <a href="./communities.html">comunidad</a> que la tenga incorporada. </p>
+<ul>
+<li>
+<p>Puedes buscar cuáles son todas las comunidades que operan con la moneda deseada en <a href="https://market.lnp2pbot.com">https://market.lnp2pbot.com</a>.</p>
+</li>
+<li>
+<p>También puedes escribir dentro del bot:</p>
+</li>
+</ul>
+<p><code>/findcomms &lt;fiat code&gt;</code></p>
+<p>Por ejemplo <code>/findcomms usd</code> se utiliza para buscar todas las comunidades que comercian con USD. Si no sabes cuál es el código de tu moneda, escribe dentro del bot <code>/listcurrencies</code> y encuéntralo.</p>
 <p><img src="./assets/images/findcomms.jpg" alt="Find Community Capture" /></p>
-<p>Solo seleccionamos aquella en la que queremos participar y el bot nos mostrará la cantidad de órdenes exitosas y el volúmen de comercio operado en las últimas 24 horas en esa comunidad, abajo vemos un botón que dice Utilizar por defecto, al tocar ese botón ya estamos participando.</p>
+<p>Al seleccionar alguna comunidad el bot mostrará la cantidad de órdenes exitosas, el volumen de comercio operado en las últimas 24 horas, y la cantidad de usarios que publican sus ofertas allí. Para configurar en cuál comunidad quieres pubicar tus ofertas, debes seleccionar el botón &quot;Utilizar por defecto&quot;.</p>
 <p><img src="./assets/images/comm-detail.jpg" alt="Community details Capture" /></p>
-<p>Para crear una orden se usa el comando <code>/buy</code> o <code>/sell</code> dependiendo de lo que se quiera. A partir de ahi el robot da las intrucciones paso a paso.</p>
+<ul>
+<li>Otra forma de hacerlo es escribir: 
+<code>/setcomm &lt;@communityGroupName | telegram-group-id&gt;</code> (<code>/setcomm</code> junto con el nombre del grupo, o su ID de telegram).</li>
+</ul>
+<p>Para crear una orden dentro de alguna comunidad se usa el comando <code>/buy</code> o <code>/sell</code> dependiendo de lo que se quiera. A partir de ahí el bot te dará las intrucciones paso a paso y tu oferta se publicará en la comunidad seleccionada.</p>
 <p><img src="./assets/images/sell.jpg" alt="Community Wizard Capture" /></p>
-<p>Para salir de la comunidad se utiliza el comando <code>/setcomm off</code></p>
+<h2 id="más-información"><a class="header" href="#más-información">Más información:</a></h2>
+<ul>
+<li>
+<p>Solo puedes tener configurada por defecto una comunidad a la vez, y por tanto todas tus ofertas se publicarán allí.</p>
+</li>
+<li>
+<p>Para salir de una comunidad y volver a publicar ofertas en el <a href="https://t.me/p2plightning">canal general</a>, debes escribir:
+<code>/setcomm off</code></p>
+</li>
+<li>
+<p>Si quieres publicar una oferta en varias comunidades a la vez, debes crearla en cada una por separado: primero la publicas en una, luego configuras otra para usar por defecto y publicas allí también, y así en todas las que la quieras poner.</p>
+</li>
+</ul>
+<p>Otra manera es escribir tu orden en forma de comando dentro del chat de una comunidad que tenga el bot como administrador, pues este la reconocerá y publicará la oferta en esa comunidad sin que tengas que configurarla por defecto.</p>
+<ul>
+<li>Puedes tomar ofertas de todas las comunidades que quieras sin tener que configurar ninguna por defecto.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="wallets-recomendadas"><a class="header" href="#wallets-recomendadas">Wallets recomendadas</a></h1>
 <p>Las siguientes wallets son las que han demostrado un mejor rendimiento al probarlas con el bot:</p>
 <ul>
@@ -567,26 +695,27 @@ Otros casos involucran malicia, como por ejemplo puede haber un vendedor que qui
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
 
-        <script type="text/javascript">
+        <script>
         window.addEventListener('load', function() {
             window.setTimeout(window.print, 100);
         });
         </script>
 
+    </div>
     </body>
 </html>
