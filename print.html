@@ -203,7 +203,7 @@
 </li>
 <li>
 <p>Si no encuentras una oferta que te convenga, crea una tú y espera a que alguien la tome.
-Escribe en <a href="https://t.me/lnp2pbot">@lnp2pBot</a> <code>/buy</code> para <a href="./how-do-i-create-a-buy-order.html">comprar Sats</a>, o <code>/sell</code> para <a href="./how-do-i-create-a-sell-order.html">vender Sats</a>, de acuerdo a lo que quieras hacer y este te guiará en el proceso. Si quieres que tu oferta se publique en una comunidad en específico, y no en el canal general de ofertas, debes <a href="./How-do-i-buy-in-a-community.html">configurar una comunidad por defecto</a>.</p>
+Escribe en <a href="https://t.me/lnp2pbot">@lnp2pBot</a> <code>/buy</code> para <a href="./how-do-i-create-a-buy-order.html">comprar Sats</a>, o <code>/sell</code> para <a href="./how-do-i-create-a-sell-order.html">vender Sats</a>, de acuerdo a lo que quieras hacer y este te guiará en el proceso. Si quieres que tu oferta se publique en una comunidad en específico, y no en el canal general de ofertas, debes <a href="./how-do-i-make-offers-in-a-community.html">configurar una comunidad por defecto</a>.</p>
 </li>
 <li>
 <p>Comienza a comprar y vender. </p>
@@ -322,8 +322,14 @@ Escribe en <a href="https://t.me/lnp2pbot">@lnp2pBot</a> <code>/buy</code> para 
 </ul>
 <p>De haber alguna variable no compatible, el bot te lo indicará durante el proceso de creación de la orden. Al completarla, la misma se publicará automáticamente en el canal de intercambio y será visible por un período de 23 horas.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cómo-busco-y-acepto-una-oferta-de-compra-o-venta"><a class="header" href="#cómo-busco-y-acepto-una-oferta-de-compra-o-venta">¿Cómo busco y acepto una oferta de compra o venta?</a></h1>
-<p>En el canal <a href="https://t.me/p2plightning">@p2plightning</a> encontrarás publicadas las ofertas de todos los participantes, incluidas las tuyas. Simplemente, revísalo hasta encontrar alguna orden que se adapte a tu búsqueda y pulsa el botón 
-<code>comprar satoshis</code> o <code>vender satoshis</code>, según sea el caso.</p>
+<p>Si nunca antes has utilizado <a href="https://t.me/lnp2pbot">@lnp2pbot</a> debes abrirlo y pulsar <code>/start</code> antes de poder tomar alguna oferta.</p>
+<p>En <a href="https://market.lnp2pbot.com">https://market.lnp2pbot.com</a> encontrarás publicadas todas las ofertas activas en el bot, incluidas las tuyas, allí podrás filtrar por fíat y comunidades.</p>
+<p>En el canal de Telegram <a href="https://t.me/p2plightning">@p2plightning</a> encontrarás las ofertas que no hayan sido publicadas en ninguna comunidad.</p>
+<p>Para encontrar ofertas publicadas en las comunidades debes escribir dentro del bot el comando <code>/findcomms &lt;fiat code&gt;</code>. Para más información lee <a href="./where-i-can-find-offers-for-my-local-currency.html">aquí</a>.</p>
+<p>Revisa todas las opciones anteriores hasta encontrar alguna orden que se adapte a tu búsqueda y pulsa el botón <code>Comprar satoshis</code> o <code>Vender satoshis</code>, según sea el caso, luego ve al chat con <a href="https://t.me/lnp2pbot">@lnp2pbot</a> para seguir sus instrucciones. Si encuentras la oferta desde <a href="https://market.lnp2pbot.com">https://market.lnp2pbot.com</a> te redireccionará al canal donde esté publicada para que puedas tomarla.</p>
+<ul>
+<li>Otra manera de tomar una oferta es utilizar el comando <code>/takeorder &lt;order id&gt;</code>, por ejemplo, si organizas un intercambio de Sats con alguien mediante <a href="https://t.me/lnp2pbot">@lnp2pbot</a> tu contraparte puede crear la orden y enviarte la ID de esta, para que la tomes directamente desde dentro del bot con el comando mencionado, evitándote ir a tomarla al canal de ofertas donde se publicó.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="cómo-cancelo-una-orden-publicada"><a class="header" href="#cómo-cancelo-una-orden-publicada">¿Cómo cancelo una orden publicada?</a></h1>
 <p>Si la orden no ha sido tomada, escribe el comando <code>/cancel</code> en tu chat con el bot o selecciónalo en el &quot;Menú&quot;. El bot te mostrará las órdenes activas. Selecciona el ID correspondiente a la orden que deseas cancelar.</p>
 <p>El ID o número identificador de tu orden aparece justo debajo del mensaje de aceptación y publicación de tu orden e, incluso, se te indica como opción para cancelarla.</p>
@@ -462,7 +468,7 @@ Escribe en <a href="https://t.me/lnp2pbot">@lnp2pBot</a> <code>/buy</code> para 
 <p><code>/findcomms &lt;fiat code&gt;</code></p>
 <p>Por ejemplo <code>/findcomms usd</code> se utiliza para buscar todas las comunidades que comercian con USD. Si no sabes cuál es el código de tu moneda, escribe dentro del bot <code>/listcurrencies</code> y encuéntralo.</p>
 <p><img src="./assets/images/findcomms.jpg" alt="Find Community Capture" /></p>
-<p>Al seleccionar alguna comunidad el bot mostrará la cantidad de órdenes exitosas, el volumen de comercio operado en las últimas 24 horas, y la cantidad de usarios que publican sus ofertas allí. Para configurar en cuál comunidad quieres pubicar tus ofertas, debes seleccionar el botón &quot;Utilizar por defecto&quot;.</p>
+<p>Al seleccionar alguna comunidad el bot mostrará la cantidad de órdenes exitosas, el volumen de comercio operado en las últimas 24 horas, y la cantidad de usuarios que publican sus ofertas allí. Para configurar en cuál comunidad quieres pubicar tus ofertas, debes seleccionar el botón &quot;Utilizar por defecto&quot;.</p>
 <p><img src="./assets/images/comm-detail.jpg" alt="Community details Capture" /></p>
 <ul>
 <li>Otra forma de hacerlo es escribir: 
