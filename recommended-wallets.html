@@ -167,13 +167,17 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="wallets-recomendadas"><a class="header" href="#wallets-recomendadas">Wallets recomendadas</a></h1>
-<p>Las siguientes wallets son las que han demostrado un mejor rendimiento al probarlas con el bot:</p>
+<p>Las siguientes wallets son las que han demostrado un mejor rendimiento al usarlas con <a href="https://t.me/lnp2pBot">@lnp2pBot</a></p>
 <ul>
 <li><a href="https://breez.technology/">Breez Wallet</a></li>
-<li><a href="https://phoenix.acinq.co/">Phoenix Wallet</a></li>
 <li><a href="https://blixtwallet.github.io/">Blixt Wallet</a></li>
+<li><a href="https://phoenix.acinq.co/">Phoenix Wallet</a></li>
 <li><a href="https://t.me/LightningTipBot">@LightningTipBot</a></li>
 </ul>
+<h4 id="notas-sobre-otras-wallets"><a class="header" href="#notas-sobre-otras-wallets">Notas sobre otras wallets</a></h4>
+<p>Con <code>Wallet of Satoshi</code>, o cualquier otro servicio custodial, puede pasar que si estás vendiendo Sats y se cancela la orden, demore en actualizarse el balance de tu wallet y no aparezcan disponibles los Sats hasta pasadas algunas horas, aunque estén en el nodo de la wallet, eso se debe a que las wallets custodials actualizan el saldo de sus usuarios cada cierto tiempo, por lo que deberás esperar unas horas.</p>
+<p>Es común que los pagos de <a href="https://t.me/lnp2pBot">@lnp2pBot</a> hacia <code>Muun wallet</code> fallen porque el bot puede pagar un fee de ruteo de hasta 0.2% máximo, así que no podrá pagar la factura cuando Muun esté cobrando fees mayores a ese, en dichos casos se debe poner una nueva invoice desde otra wallet (Más info <a href="./i-cant-receive.html">aquí</a>). 
+También puede pasar que estés vendiendo Sats desde Muun wallet y se cancele la orden, de todas formas cobrará un fee porque Muun wallet no es una wallet LN nativa, sino onchain que funciona mediante submarine swaps, y para hacer una transacción debes pagar el fee de minería aunque la hold invoice del bot haya sido cancelada.  </p>
 
                     </main>
 
